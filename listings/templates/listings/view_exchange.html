@@ -1,0 +1,22 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h1>Exchange Details</h1>
+        <h2>Messages</h2>
+        <div class="card mb-3">
+            <div class="card-body">
+                {% for message in messages %}
+                    <div>
+                        <strong>{{ message.sender.username }}:</strong> {{ message.content }} <br>
+                        <small>{{ message.timestamp }}</small>
+                    </div>
+                    <hr>
+                {% endfor %}
+            </div>
+        </div>
+
+        <a href="{% url 'send_message' exchange.id %}" class="btn btn-primary mt-3">Send Message</a>
+        <a href="{% url 'leave_review' exchange.id %}" class="btn btn-success mt-3">Leave Review</a>
+    </div>
+{% endblock %}

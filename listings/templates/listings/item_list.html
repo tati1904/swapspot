@@ -1,0 +1,32 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h1 class="mb-4">Available Items for Exchange</h1>
+        <a class="btn btn-primary mb-3" href="{% url 'add_item' %}">Add New Item</a>
+        <div class="row">
+            {% for item in items %}
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    {% if item.image %}
+                        <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.name }}">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.name }}</h5>
+                        <p class="card-text">{{ item.description }}</p>
+                        <p><strong>Category:</strong> {{ item.category }} | <strong>Condition:</strong> {{ item.condition }}</p>
+                        
+                        <div class="d-flex justify-content-between">
+                            {% if item.user != request.user %}
+                                <a href="{% url 'create_exchange' sender_item_id=item.id receiver_item_id=item.id %}" class="btn btn-success btn-sm">Request Exchange</a>
+                            {% endif %}
+                            <a href="{% url 'edit_item' item.pk %}" class="btn btn-warning btn-sm">Edit</a>
+                            <a href="{% url 'delete_item' item.pk %}" class="btn btn-danger btn-sm">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
