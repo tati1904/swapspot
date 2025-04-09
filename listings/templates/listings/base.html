@@ -55,18 +55,19 @@
     </div>
   </nav>
 
-  <!-- ✅ Categories -->
-  <nav class="bg-white py-2 border-bottom">
-    <div class="container">
-      <ul class="nav nav-pills justify-content-center">
-        <li class="nav-item"><a class="nav-link text-dark" href="#">Electronics</a></li>
-        <li class="nav-item"><a class="nav-link text-dark" href="#">Fashion</a></li>
-        <li class="nav-item"><a class="nav-link text-dark" href="#">Home & Garden</a></li>
-        <li class="nav-item"><a class="nav-link text-dark" href="#">Books</a></li>
-        <li class="nav-item"><a class="nav-link text-dark" href="#">Sports</a></li>
-      </ul>
-    </div>
-  </nav>
+  <!-- Categories Navigation -->
+<nav class="bg-white py-2 border-bottom">
+  <div class="container">
+    <ul class="nav nav-pills justify-content-center">
+      <li class="nav-item"><a class="nav-link text-dark" href="{% url 'category_items' 'Electronics' %}">Electronics</a></li>
+      <li class="nav-item"><a class="nav-link text-dark" href="{% url 'category_items' 'Fashion' %}">Fashion</a></li>
+      <li class="nav-item"><a class="nav-link text-dark" href="{% url 'category_items' 'Home & Garden' %}">Home & Garden</a></li>
+      <li class="nav-item"><a class="nav-link text-dark" href="{% url 'category_items' 'Books' %}">Books</a></li>
+      <li class="nav-item"><a class="nav-link text-dark" href="{% url 'category_items' 'Sports' %}">Sports</a></li>
+    </ul>
+  </div>
+</nav>
+
 
   <!-- ✅ Page Content -->
   <main class="container mt-4 mb-5">

@@ -25,3 +25,4 @@ urlpatterns = [
     path('register/', views.register, name='register'),
     path('help/', views.help_contact, name='help_contact'),
 ]
+path('category/<str:category>/', views.category_items, name='category_items'),

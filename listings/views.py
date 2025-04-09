@@ -148,3 +148,6 @@ def register(request):
 # ✅ Help & Contact view
 def help_contact(request):
     return render(request, 'listings/help_contact.html')
+def category_items(request, category):
+    items = Item.objects.filter(category__iexact=category)
+    return render(request, 'listings/category_items.html', {'items': items, 'category': category})
