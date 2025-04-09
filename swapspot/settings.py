@@ -11,13 +11,15 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
+# https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-r@qo8c%stmlhk$nowiu$62fjjblk%(ixc0pm)m1fnq@-6u$3_+'
@@ -26,7 +28,6 @@ SECRET_KEY = 'django-insecure-r@qo8c%stmlhk$nowiu$62fjjblk%(ixc0pm)m1fnq@-6u$3_+
 DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'swapspot.onrender.com']
-
 
 
 # Application definition
@@ -38,9 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
-    'swapspot', 
-    'listings',  
+
+    'swapspot',
+    'listings',
 ]
 
 
@@ -59,8 +60,8 @@ ROOT_URLCONF = 'swapspot.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],  # ✅ Now Django will look for templates in the root 'templates' folder
-        'APP_DIRS': True,  
+        'DIRS': [BASE_DIR / 'templates'],
+        'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -72,10 +73,6 @@ TEMPLATES = [
     },
 ]
 
-
-
-
-
 WSGI_APPLICATION = 'swapspot.wsgi.application'
 
 
@@ -85,14 +82,13 @@ WSGI_APPLICATION = 'swapspot.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'swapspot_db',  
+        'NAME': 'swapspot_db',
         'USER': 'postgres',
-        'PASSWORD': 'Erika2016',  
-        'HOST': 'localhost', 
-        'PORT': '5432', 
+        'PASSWORD': 'Erika2016',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
-
 
 
 # Password validation
@@ -130,7 +126,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Local development static files
 STATICFILES_DIRS = [BASE_DIR / 'listings' / 'static']
+
+# Deployment: where static files will be collected
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 # Default primary key field type
