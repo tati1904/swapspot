@@ -11,15 +11,15 @@
 </head>
 <body>
 
-   <!-- Top Navigation -->
-<nav class="bg-light py-2 border-bottom">
-    <div class="container d-flex justify-content-end">
-      <a href="{% url 'login' %}" class="me-3 text-dark">Sign In</a>
-      <a href="{% url 'logout' %}" class="me-3 text-dark">Logout</a>
-      <a href="#" class="me-3 text-dark">Register</a> <!-- Placeholder until we build it -->
-      <a href="#" class="text-dark">Help & Contact</a>
-    </div>
-  </nav>
+    {% if user.is_authenticated %}
+    <span class="me-3 text-dark">Welcome, {{ user.username }}!</span>
+    <a href="{% url 'logout' %}" class="me-3 text-dark">Logout</a>
+  {% else %}
+    <a href="{% url 'login' %}" class="me-3 text-dark">Sign In</a>
+    <a href="{% url 'register' %}" class="me-3 text-dark">Register</a>
+  {% endif %}
+  <a href="{% url 'help_contact' %}" class="text-dark">Help & Contact</a>
+  
   
 
     <!-- Main Navigation -->
