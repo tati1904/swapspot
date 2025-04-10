@@ -21,70 +21,70 @@
         </div>
     </section>
 
-    <div class="container mt-5">
+    <div class="container my-5">
         <h2 class="text-center mb-4">Explore Categories</h2>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-
-            <!-- Electronics -->
-            <div class="col">
-                <a href="{% url 'category_items' 'electronics' %}" class="text-decoration-none text-dark">
-                    <div class="card h-100">
-                        <img src="{% static 'images/categories/electronics/electronics.jpg' %}" class="card-img-top" alt="Electronics">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Electronics</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Fashion -->
-            <div class="col">
-                <a href="{% url 'category_items' 'fashion' %}" class="text-decoration-none text-dark">
-                    <div class="card h-100">
-                        <img src="{% static 'images/categories/fashion/fashion1.jpg' %}" class="card-img-top" alt="Fashion">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Fashion</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Home & Garden -->
-            <div class="col">
-                <a href="{% url 'category_items' 'home_garden' %}" class="text-decoration-none text-dark">
-                    <div class="card h-100">
-                        <img src="{% static 'images/categories/home_garden/home1.jpg' %}" class="card-img-top" alt="Home & Garden">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Home & Garden</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Books -->
-            <div class="col">
-                <a href="{% url 'category_items' 'books' %}" class="text-decoration-none text-dark">
-                    <div class="card h-100">
-                        <img src="{% static 'images/categories/books/books1.jpg' %}" class="card-img-top" alt="Books">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Books</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Sports -->
-            <div class="col">
-                <a href="{% url 'category_items' 'sports' %}" class="text-decoration-none text-dark">
-                    <div class="card h-100">
-                        <img src="{% static 'images/categories/sports/sports1.jpg' %}" class="card-img-top" alt="Sports">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Sports</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
+      
+          <!-- Electronics -->
+          <div class="col">
+            <a href="{% url 'category_items' 'electronics' %}" class="text-decoration-none text-dark">
+              <div class="card h-100 border-0 shadow-sm">
+                <img src="{% static 'images/categories/electronics/electronics1.jpg' %}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Electronics">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Electronics</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+      
+          <!-- Fashion -->
+          <div class="col">
+            <a href="{% url 'category_items' 'fashion' %}" class="text-decoration-none text-dark">
+              <div class="card h-100 border-0 shadow-sm">
+                <img src="{% static 'images/categories/fashion/fashion1.jpg' %}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Fashion">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Fashion</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+      
+          <!-- Home & Garden -->
+          <div class="col">
+            <a href="{% url 'category_items' 'home_garden' %}" class="text-decoration-none text-dark">
+              <div class="card h-100 border-0 shadow-sm">
+                <img src="{% static 'images/categories/home_garden/home1.jpg' %}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Home & Garden">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Home & Garden</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+      
+          <!-- Books -->
+          <div class="col">
+            <a href="{% url 'category_items' 'books' %}" class="text-decoration-none text-dark">
+              <div class="card h-100 border-0 shadow-sm">
+                <img src="{% static 'images/categories/books/books1.jpg' %}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Books">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Books</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+      
+          <!-- Sports -->
+          <div class="col">
+            <a href="{% url 'category_items' 'sports' %}" class="text-decoration-none text-dark">
+              <div class="card h-100 border-0 shadow-sm">
+                <img src="{% static 'images/categories/sports/sports1.jpg' %}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Sports">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Sports</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+      
         </div>
-    </div>
-{% endblock %}
+      </div>
+      
