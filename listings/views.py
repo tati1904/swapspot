@@ -151,3 +151,7 @@ def help_contact(request):
 def category_items(request, category):
     items = Item.objects.filter(category__iexact=category)
     return render(request, 'listings/category_items.html', {'items': items, 'category': category})
+
+def category_items(request, category_name):
+    items = Item.objects.filter(category__iexact=category_name)
+    return render(request, 'listings/category_items.html', {'category_name': category_name, 'items': items})

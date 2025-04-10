@@ -26,3 +26,8 @@ urlpatterns = [
     path('help/', views.help_contact, name='help_contact'),
 ]
 path('category/<str:category>/', views.category_items, name='category_items'),
+urlpatterns = [
+    path('', views.home, name='home'),
+    path('category/<str:category_name>/', views.category_items, name='category_items'),
+    # ... all your other views
+]
