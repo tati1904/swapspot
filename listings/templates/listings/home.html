@@ -2,89 +2,78 @@
 {% load static %}
 
 {% block content %}
-    <section class="banner">
-        <div class="banner-text">
-            <h1>Save when you swap more!</h1>
-            <p>Trade what you don’t need and find something you love.</p>
-            <button>Start Swapping</button>
-        </div>
-    </section>
+  <section class="banner py-5 text-center bg-light">
+    <div class="container">
+      <h1 class="display-5 fw-bold">Save when you swap more!</h1>
+      <p class="lead">Trade what you don’t need and find something you love.</p>
+      <a href="{% url 'add_item' %}" class="btn btn-success btn-lg">Start Swapping</a>
+    </div>
+  </section>
 
-    <section class="categories">
-        <h2>Shop by Category</h2>
-        <div class="category-list">
-            <a href="#">Electronics</a>
-            <a href="#">Fashion</a>
-            <a href="#">Home & Garden</a>
-            <a href="#">Books & Media</a>
-            <a href="#">Sports</a>
-        </div>
-    </section>
+  <div class="container my-5">
+    <h2 class="text-center mb-4">Explore Categories</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
 
-    <div class="container my-5">
-        <h2 class="text-center mb-4">Explore Categories</h2>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
-      
-          <!-- Electronics -->
-          <div class="col">
-            <a href="{% url 'category_items' 'electronics' %}" class="text-decoration-none text-dark">
-              <div class="card h-100 border-0 shadow-sm">
-                <img src="{% static 'images/categories/electronics/electronics1.jpg' %}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Electronics">
-                <div class="card-body text-center">
-                  <h5 class="card-title">Electronics</h5>
-                </div>
-              </div>
-            </a>
+      <!-- Electronics -->
+      <div class="col">
+        <a href="{% url 'category_items' 'electronics' %}" class="text-decoration-none text-dark">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="{% static 'images/categories/electronics/electronics1.jpg' %}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Electronics">
+            <div class="card-body text-center">
+              <h5 class="card-title">Electronics</h5>
+            </div>
           </div>
-      
-          <!-- Fashion -->
-          <div class="col">
-            <a href="{% url 'category_items' 'fashion' %}" class="text-decoration-none text-dark">
-              <div class="card h-100 border-0 shadow-sm">
-                <img src="{% static 'images/categories/fashion/fashion1.jpg' %}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Fashion">
-                <div class="card-body text-center">
-                  <h5 class="card-title">Fashion</h5>
-                </div>
-              </div>
-            </a>
-          </div>
-      
-          <!-- Home & Garden -->
-          <div class="col">
-            <a href="{% url 'category_items' 'home_garden' %}" class="text-decoration-none text-dark">
-              <div class="card h-100 border-0 shadow-sm">
-                <img src="{% static 'images/categories/home_garden/home1.jpg' %}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Home & Garden">
-                <div class="card-body text-center">
-                  <h5 class="card-title">Home & Garden</h5>
-                </div>
-              </div>
-            </a>
-          </div>
-      
-          <!-- Books -->
-          <div class="col">
-            <a href="{% url 'category_items' 'books' %}" class="text-decoration-none text-dark">
-              <div class="card h-100 border-0 shadow-sm">
-                <img src="{% static 'images/categories/books/books1.jpg' %}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Books">
-                <div class="card-body text-center">
-                  <h5 class="card-title">Books</h5>
-                </div>
-              </div>
-            </a>
-          </div>
-      
-          <!-- Sports -->
-          <div class="col">
-            <a href="{% url 'category_items' 'sports' %}" class="text-decoration-none text-dark">
-              <div class="card h-100 border-0 shadow-sm">
-                <img src="{% static 'images/categories/sports/sports1.jpg' %}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Sports">
-                <div class="card-body text-center">
-                  <h5 class="card-title">Sports</h5>
-                </div>
-              </div>
-            </a>
-          </div>
-      
-        </div>
+        </a>
       </div>
-      
+
+      <!-- Fashion -->
+      <div class="col">
+        <a href="{% url 'category_items' 'fashion' %}" class="text-decoration-none text-dark">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="{% static 'images/categories/fashion/fashion1.jpg' %}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Fashion">
+            <div class="card-body text-center">
+              <h5 class="card-title">Fashion</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Home & Garden -->
+      <div class="col">
+        <a href="{% url 'category_items' 'home_garden' %}" class="text-decoration-none text-dark">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="{% static 'images/categories/home_garden/home1.jpg' %}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Home & Garden">
+            <div class="card-body text-center">
+              <h5 class="card-title">Home & Garden</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Books -->
+      <div class="col">
+        <a href="{% url 'category_items' 'books' %}" class="text-decoration-none text-dark">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="{% static 'images/categories/books/books1.jpg' %}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Books">
+            <div class="card-body text-center">
+              <h5 class="card-title">Books</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Sports -->
+      <div class="col">
+        <a href="{% url 'category_items' 'sports' %}" class="text-decoration-none text-dark">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="{% static 'images/categories/sports/sports1.jpg' %}" class="card-img-top object-fit-cover" style="height: 200px;" alt="Sports">
+            <div class="card-body text-center">
+              <h5 class="card-title">Sports</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}
