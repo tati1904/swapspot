@@ -31,3 +31,4 @@ urlpatterns = [
     path('category/<str:category_name>/', views.category_items, name='category_items'),
     # ... all your other views
 ]
+path('category/<str:category_name>/', views.category_items, name='category_items'),
