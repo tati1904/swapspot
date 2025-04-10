@@ -127,12 +127,11 @@ def leave_review(request, exchange_id):
 
 @login_required
 def view_reviews(request, user_id):
-    user = get_object_or_404(User, id=user_id)
-    reviews = Review.objects.filter(reviewed_user=user).order_by('-created_at')
-    return render(request, 'listings/view_reviews.html', {'user': user, 'reviews': reviews})
+    profile_user = get_object_or_404(User, id=user_id)
+    reviews = Review.objects.filter(reviewed_user=profile_user).order_by('-created_at')
+    return render(request, 'listings/view_reviews.html', {'user': profile_user, 'reviews': reviews})
 
 
-# ✅ Register view
 def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -145,13 +144,10 @@ def register(request):
     return render(request, 'listings/register.html', {'form': form})
 
 
-# ✅ Help & Contact view
 def help_contact(request):
     return render(request, 'listings/help_contact.html')
-def category_items(request, category):
-    items = Item.objects.filter(category__iexact=category)
-    return render(request, 'listings/category_items.html', {'items': items, 'category': category})
+
 
 def category_items(request, category_name):
     items = Item.objects.filter(category__iexact=category_name)
-    return render(request, 'listings/category_items.html', {'category_name': category_name, 'items': items})
+    return render(request, 'listings/category_items.html', {'items': items, 'category_name': category_name})
