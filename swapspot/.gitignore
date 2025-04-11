@@ -2,10 +2,12 @@
 *.pyc
 __pycache__/
 
-# Environment
+# Virtual Environment
 venv/
 .env
 
 # Django
 db.sqlite3
-/staticfiles/
+
+# Static files collected for deployment (never commit!)
+staticfiles/
