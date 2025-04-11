@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: swapspot
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn swapspot.wsgi:application"
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+    autoDeploy: true
+    releaseCommand: "python manage.py migrate"
