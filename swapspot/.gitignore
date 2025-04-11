@@ -10,4 +10,5 @@ venv/
 db.sqlite3
 
 # Static files collected for deployment (never commit!)
-staticfiles/
+/staticfiles/
+
