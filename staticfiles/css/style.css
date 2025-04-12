@@ -1,0 +1,83 @@
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+nav.top-nav {
+    text-align: center;
+    font-size: 14px;
+}
+
+nav.top-nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+nav.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav.main-nav .logo {
+    height: 100px;
+    width: 200px
+}
+
+nav.main-nav .search-container {
+    display: flex;
+    justify-content: center;
+}
+
+nav.main-nav .search-container input {
+    padding: 8px;
+    margin-right: 10px;
+    width: 700px;
+}
+
+nav.main-nav .search-container button {
+     padding: 8px 16px;
+    cursor: pointer;
+}
+
+nav.main-nav .cart-container {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+nav.categories {
+    text-align: center;
+    margin-top: 20px;
+}
+
+nav.categories ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav.categories ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+nav.categories ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f4f4f4;
+}
