@@ -5,7 +5,8 @@ import dj_database_url  # ✅ Import for Render-compatible DB config
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-r@qo8c%stmlhk$nowiu$62fjjblk%(ixc0pm)m1fnq@-6u$3_+'
-DEBUG = True
+DEBUG = os.environ.get('RENDER', '') != 'true'
+
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'swapspot.onrender.com']
 
