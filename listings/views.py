@@ -3,9 +3,10 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-
 from .models import Item, Exchange, Review
 from .forms import ItemForm, MessageForm, ReviewForm
+from django.db.models import Q
+
 
 
 def home(request):
@@ -151,3 +152,44 @@ def help_contact(request):
 def category_items(request, category_name):
     items = Item.objects.filter(category__iexact=category_name)
     return render(request, 'listings/category_items.html', {'items': items, 'category_name': category_name})
+
+def browse_items(request):
+    query = request.GET.get('q')
+    items = Item.objects.all().order_by('-date_posted')
+
+    if query:
+        items = items.filter(
+            Q(name__icontains=query) |
+            Q(description__icontains=query) |
+            Q(category__icontains=query)
+        )
+
+    return render(request, 'listings/browse_items.html', {'items': items})
+
+@login_required
+def propose_swap(request, item_id):
+    target_item = get_object_or_404(Item, id=item_id)
+
+    # Don't let users swap with their own item
+    if target_item.user == request.user:
+        return redirect('browse_items')
+
+    user_items = Item.objects.filter(user=request.user)
+
+    if request.method == 'POST':
+        selected_item_id = request.POST.get('user_item')
+        user_item = get_object_or_404(Item, id=selected_item_id, user=request.user)
+
+        # Create exchange
+        Exchange.objects.create(
+            sender=request.user,
+            receiver=target_item.user,
+            sender_item=user_item,
+            receiver_item=target_item
+        )
+        return redirect('browse_items')
+
+    return render(request, 'listings/propose_swap.html', {
+        'target_item': target_item,
+        'user_items': user_items
+    })

@@ -51,12 +51,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'swapspot.wsgi.application'
 
-# ✅ Render-compatible database configuration
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL')
+        default=f'sqlite:///{BASE_DIR / "db.sqlite3"}'
     )
 }
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -84,3 +84,5 @@ STATICFILES_DIRS = [BASE_DIR / 'listings' / 'static']
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGIN_REDIRECT_URL = '/items/'  
+

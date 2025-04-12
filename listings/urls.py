@@ -28,3 +28,6 @@ urlpatterns = [
     # Categories
     path('category/<str:category_name>/', views.category_items, name='category_items'),
 ]
+path('browse/', views.browse_items, name='browse_items'),
+path('swap/<int:item_id>/', views.propose_swap, name='propose_swap'),
+

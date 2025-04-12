@@ -1,0 +1,16 @@
+{% extends 'listings/base.html' %}
+{% block content %}
+<h2>Propose a Swap</h2>
+<p>You’re proposing a swap for: <strong>{{ target_item.name }}</strong></p>
+
+<form method="post">
+  {% csrf_token %}
+  <label for="user_item">Select one of your items:</label>
+  <select name="user_item" id="user_item" class="form-control">
+    {% for item in user_items %}
+      <option value="{{ item.id }}">{{ item.name }}</option>
+    {% endfor %}
+  </select>
+  <button type="submit" class="btn btn-primary mt-2">Send Swap Request</button>
+</form>
+{% endblock %}

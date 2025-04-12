@@ -1,6 +1,5 @@
 from django import forms
-from .models import Item
-from .models import Message
+from .models import Item, Message
 from .models import Review
 
 class ItemForm(forms.ModelForm):
